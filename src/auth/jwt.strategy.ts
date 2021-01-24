@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 
 import { Strategy, ExtractJwt } from 'passport-jwt';
 
-import { JwtPayload } from './auth.interface';
+import { USER } from './auth.constant';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -14,8 +14,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  validate(payload: JwtPayload): boolean {
-    return true;
-    console.log(payload);
+  validate({ payload }): boolean {
+    return payload === USER.username;
   }
 }
