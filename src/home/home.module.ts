@@ -5,7 +5,6 @@ import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from '../auth/jwt.strategy';
 
 import { HomeController } from './home.controller';
-import { HomeService } from './home.service';
 
 @Module({
   imports: [
@@ -19,7 +18,6 @@ import { HomeService } from './home.service';
   ],
   controllers: [HomeController],
   providers: [
-    HomeService,
     JwtStrategy
   ]
 })

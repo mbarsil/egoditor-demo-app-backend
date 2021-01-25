@@ -5,7 +5,7 @@ import { AuthGuard } from '@nestjs/passport';
 @UseGuards(AuthGuard())
 export class HomeController {
   @Get()
-  getHomeMessage(@Req() req): string {
+  getHomeMessage(): string {
     return 'You are in the home page';
   }
 }
